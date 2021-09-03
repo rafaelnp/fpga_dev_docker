@@ -75,5 +75,3 @@ RUN apt-get autoclean && \
 apt-get autoremove && \
 apt-get clean && \
 rm -fr /var/lib/apt/lists/*
-
-ENTRYPOINT ["/bin/bash"]
