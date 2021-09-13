@@ -3,7 +3,7 @@ FROM ghdl/vunit:gcc
 
 LABEL maintainer="Rafael do Nascimento Pereira <rnp@25ghz.net>"
 LABEL description="FGPA development and verification environment"
-LABEL version="0.1"
+LABEL version="0.2"
 
 
 # Disable Prompt During Packages Installation
@@ -26,12 +26,12 @@ gawk \
 tcl-dev \
 libffi-dev \
 git \
-mercurial \
 graphviz \
 xdot \
 pkg-config \
 python \
 python3 \
+python3-dev \
 libftdi-dev \
 gperf \
 libboost-program-options-dev \
@@ -40,7 +40,12 @@ libgmp-dev \
 cmake \
 wget \
 curl \
-libpython2.7
+libpython2.7 \
+verilator \
+python3-pip
+
+RUN pip3 install --upgrade pip && \
+pip install cocotb pytest
 
 # yosys
 RUN git clone https://github.com/YosysHQ/yosys.git ${YOSYS_SRC}
