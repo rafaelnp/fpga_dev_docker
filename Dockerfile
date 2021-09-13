@@ -48,18 +48,18 @@ RUN pip3 install --upgrade pip && \
 pip install cocotb pytest
 
 # yosys
-RUN git clone https://github.com/YosysHQ/yosys.git ${YOSYS_SRC}
+RUN git clone https://github.com/YosysHQ/yosys.git --depth=1 ${YOSYS_SRC}
 WORKDIR ${YOSYS_SRC}
 RUN make -j$(nproc) && \
 make install && \
 make clean
 
 # symbiyosys
-RUN git clone https://github.com/YosysHQ/SymbiYosys.git ${SBY_SRC}
+RUN git clone https://github.com/YosysHQ/SymbiYosys.git --depth=1 ${SBY_SRC}
 WORKDIR ${SBY_SRC}
 RUN make install
 
-RUN git clone https://github.com/SRI-CSL/yices2.git ${YICES2_SRC}
+RUN git clone https://github.com/SRI-CSL/yices2.git --depth=1 ${YICES2_SRC}
 WORKDIR ${YICES2_SRC}
 RUN autoconf && \
 ./configure && \
@@ -68,7 +68,7 @@ make install && \
 make clean
 
 # ghdl-yosys-plugin
-RUN git clone https://github.com/ghdl/ghdl-yosys-plugin ${GHDL_YOSYS_SRC}
+RUN git clone https://github.com/ghdl/ghdl-yosys-plugin --depth=1 ${GHDL_YOSYS_SRC}
 WORKDIR ${GHDL_YOSYS_SRC}
 RUN make && \
 make install && \
