@@ -8,3 +8,5 @@ Docker image for FPGA development. Programmes provided in the image:
 * SYmbiYosys
 * VUnit
 * Yices
+* Cocotb
+* Icarus Verilog
