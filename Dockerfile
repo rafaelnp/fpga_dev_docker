@@ -41,7 +41,7 @@ cmake \
 wget \
 curl \
 libpython2.7 \
-verilator \
+iverilog \
 python3-pip
 
 RUN pip3 install --upgrade pip && \
