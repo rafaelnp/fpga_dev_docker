@@ -44,9 +44,6 @@ libpython2.7 \
 iverilog \
 python3-pip
 
-RUN pip3 install --upgrade pip && \
-pip install cocotb pytest
-
 # yosys
 RUN git clone https://github.com/YosysHQ/yosys.git --depth=1 ${YOSYS_SRC}
 WORKDIR ${YOSYS_SRC}
@@ -79,6 +76,8 @@ make install && \
 cd .. && \
 rm -fr ghdl-yosys-plugin
 
+# install cocotb
+RUN pip install cocotb pytest
 
 # cleanup
 WORKDIR /root
