@@ -1,7 +1,8 @@
 # FPGA dev docker
 
 Version: 0.3
-Data:    2021.10.05
+
+Date:    2021.10.05
 
 Docker image for FPGA development and verification. Programmes included in the image:
 
